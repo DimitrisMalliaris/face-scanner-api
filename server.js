@@ -6,12 +6,13 @@ import image from './Controllers/image.js';
 import imageApi from './Controllers/imageApi.js';
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 //#USE
 app.use(express.json());
 app.use(cors());
 //#METHODS
+app.get('/', (req, res) => {res.send("it's a working!");})
 app.post('/signin', (req, res) => signin(req, res))
 app.post('/register', (req, res) => register(req, res))
 app.get('/profile/:id', (req, res) => profile(req, res))
