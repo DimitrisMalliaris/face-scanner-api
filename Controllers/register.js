@@ -36,7 +36,7 @@ const register = (req, res) => {
             .then(trx.commit)
             .catch(trx.rollback);
     })
-    .catch(err => res.status(400).json(console.log));
+    .catch(err => res.status(400).json(err));
 }
 
 export default register;
