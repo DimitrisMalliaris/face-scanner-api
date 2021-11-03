@@ -36,7 +36,7 @@ const register = (req, res) => {
             .then(trx.commit)
             .catch(trx.rollback);
     })
-    .catch(err => res.json('Unable to register. Please try again using different credentials.'));
+    .catch(err => res.status(400).json(console.log));
 }
 
 export default register;
