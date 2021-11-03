@@ -5,7 +5,7 @@ const register = (req, res) => {
     const { email, name, password } = req.body;
     
     if(!email || !name || !password) {
-        return res.status(400).json('incorrect form submission');
+        return res.status(400).json('Incorrect form submission.');
     }
 
     const hash = bcrypt.hashSync(password, 10);
@@ -36,7 +36,7 @@ const register = (req, res) => {
             .then(trx.commit)
             .catch(trx.rollback);
     })
-    .catch(err => res.status(400).json(err));
+    .catch(err => res.status(400).json('Cannot register. Please try again.'));
 }
 
 export default register;
