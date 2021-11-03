@@ -3,9 +3,11 @@ import knex from 'knex';
 const dataBase = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: '7mwjdef8',
+        connectionString: process.env.DATABASE_URL,
+        ssl: true,
+        host: 'postgresql-flat-04327',
+        user: 'api',
+        password: '',
         database: 'facescanner'
     }
 })
