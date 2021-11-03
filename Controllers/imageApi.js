@@ -1,7 +1,7 @@
 import Clarifai from 'clarifai';
 
 const app = new Clarifai.App({
-    apiKey: '447234c1865a4fc18155bff1324e335a'
+    apiKey: process.env.CLARIFAI_API
   });
 
 const imageApi = (req, res) => {
