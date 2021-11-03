@@ -3,8 +3,8 @@ import knex from 'knex';
 const dataBase = knex({
     client: 'pg',
     connection: {
-        ssl: true,
-        host: process.env.DATABASE_URL
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
     }
 })
 
